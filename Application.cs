@@ -27,6 +27,7 @@ namespace Calculator
                     double inputSecondOperand = InputValueValidator.ReadValidNumber();
                     double resultCalculating = calculator.Calculate(operation, inputFirstOperand, inputSecondOperand); 
                     Console.WriteLine("");
+                    ChangeSignOperation(ref operation,ref inputSecondOperand);
                     Console.WriteLine($"Результат: {inputFirstOperand} {operation} {inputSecondOperand} = {resultCalculating}");
 
                 }
@@ -49,5 +50,15 @@ namespace Calculator
 
             }
         }
+        public static void ChangeSignOperation(ref string operation, ref double secondOperand)
+        {
+            if (operation == "-" && secondOperand < 0)
+            {
+                secondOperand = ChangeSignOperand(secondOperand);
+                operation = "+";
+            }
+
+        }
+        public static double ChangeSignOperand(double secondOperand) => secondOperand * (-1);
     }
 }
