@@ -16,7 +16,7 @@
                 Console.Write("введите корректное число :");
             }
         }
-        public string ReadValidOperation(string[] allowedOperations, string message)
+        public string ReadValidOperation(IEnumerable<string> allowedOperations, string message)
         {
 
             Console.Write(message);
@@ -38,7 +38,7 @@
             if (userAnswer.ToLower() == "да") return true;
             return false;
         }
-        public void PrintOperations(string[] inputOperations)
+        public void PrintOperations(IEnumerable<string> inputOperations)
         {
             Console.WriteLine();
             foreach (var i in inputOperations)

@@ -8,10 +8,8 @@
         }
         static void Run()
         {
-            CalculatorOperations calculatorOperations = new();
-            Calculator calculator = new(calculatorOperations);
+            Calculator calculator = new();
             InputManager inputManager = new();
-            string[] operationsList = { "+", "-", "/", "*" };
             bool isExitApp = true;
             while (isExitApp)
             {
@@ -20,9 +18,9 @@
                 {
                     double inputFirstOperand = inputManager.ReadValidNumber("\nвведите первый операнд:");
 
-                    inputManager.PrintOperations(operationsList);
+                    inputManager.PrintOperations(calculator.GetAllOperations);
 
-                    string operation = inputManager.ReadValidOperation(operationsList, "\nвыберите операцию из перечисленных выше:");
+                    string operation = inputManager.ReadValidOperation(calculator.GetAllOperations, "\nвыберите операцию из перечисленных выше:");
 
                     double inputSecondOperand = inputManager.ReadValidNumber("\nвведите второй операнд:");
 
