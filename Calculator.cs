@@ -2,7 +2,7 @@
 {
     internal class Calculator
     {
-        public readonly CalculatorOperations _operations;
+        private readonly CalculatorOperations _operations;
         public Calculator(CalculatorOperations operations)
         {
             _operations = operations;
