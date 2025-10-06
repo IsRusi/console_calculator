@@ -1,9 +1,9 @@
 ﻿namespace Calculator
 {
-    internal class Application
+    internal class Calculator
     {
         public readonly CalculatorOperations _operations;
-        public Application(CalculatorOperations operations)
+        public Calculator(CalculatorOperations operations)
         {
             _operations = operations;
         }
